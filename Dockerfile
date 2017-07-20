@@ -27,7 +27,7 @@ RUN apt-get update && \
       # mysql client
       libmysqlclient-dev \
 
-      # network devices
+      # network components
       curl \ 
 
       # package installation
