@@ -20,7 +20,7 @@ docker run -d --name=home-assistant --net=host --rm \
   -v ~/hass-config:/config -v /etc/localtime:/etc/localtime:ro -v ~/.ssh:/ssh \
   sterlingw/rpi-aio-home-assistant:v0.48.1
 ```
-#### Parameters
+#### Parameters Explained
 - `--net=host` Optional, depending on your use case. You may expose specific ports or just use this for simplicity. This works well for things like Amazon Alexa/Emulated Hue.
 - `--rm` Optional. Removes the container when it is stopped. For more stability, use `--restart=always`.
 - `--device=/dev/vchiq:/dev/vchiq` Required to enable HDMI CEC components.
@@ -28,6 +28,10 @@ docker run -d --name=home-assistant --net=host --rm \
 - `-v ~/hass-config:/config` Specifies the Home Assistant config directory.
 - `-v /etc/localtime:/etc/localtime:ro` Sets the container's timezone to the host's timezone.
 - `-v ~/.ssh:/ssh` Used to gain access to host's ssh keys for ssh-based components.
+
+### Other Containers
+
+#### MySQL
 
 ```bash
 # mysql
