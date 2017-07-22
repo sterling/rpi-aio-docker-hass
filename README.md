@@ -9,7 +9,7 @@ Supports:
   - ssh device tracker
   - wake on lan
   - curl
-  - mysql recorder (requires separate mysql server)
+  - mysql recorder (requires [separate mysql server](#mysql))
 
 ## Example Usage
 
