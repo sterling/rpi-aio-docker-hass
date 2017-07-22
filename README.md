@@ -2,6 +2,7 @@
 All-in-one docker image for Home Assistant on a Raspberry Pi
 
 Supports:
+- v0.48.1+
   - zwave
   - hdmi cec
   - nmap scanner
