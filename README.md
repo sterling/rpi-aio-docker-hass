@@ -12,7 +12,6 @@ Supports:
   - mysql recorder (requires separate mysql server)
 
 ### Example Usage
-Your usage may vary
 
 ```bash
 # home assistant
