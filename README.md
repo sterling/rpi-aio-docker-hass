@@ -18,7 +18,7 @@ Supports:
 docker run -d --name=home-assistant --net=host --rm \
   --device=/dev/vchiq:/dev/vchiq --device=/dev/zwave:/dev/zwave \
   -v ~/hass-config:/config -v /etc/localtime:/etc/localtime:ro -v ~/.ssh:/ssh \
-  sterlingw/pi3-home-assistant:v0.48.1
+  sterlingw/rpi-aio-home-assistant:v0.48.1
 ```
 
 ```bash
