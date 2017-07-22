@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian
 
 RUN apt-get update && \
     apt-get install --no-install-recommends \
@@ -43,20 +43,22 @@ RUN pip3 install \
 
 # build libcec
 WORKDIR /tmp
-RUN git clone -b p8-platform-2.1.0.1 https://github.com/Pulse-Eight/platform.git && \
+RUN git clone https://github.com/Pulse-Eight/platform.git && \
     mkdir platform/build && \
     cd platform/build && \
+    git checkout a822e196cb57d8545dccca6cc22fda0f83c34321 && \
     cmake .. && \
     make && \
-    sudo make install && \
+    make install && \
     cd - && \
-    git clone -b libcec-4.0.2 https://github.com/Pulse-Eight/libcec.git && \
+    git clone https://github.com/Pulse-Eight/libcec.git && \
     mkdir libcec/build && \
     cd libcec/build && \
+    git checkout f2c4ca7702d5ae0301c9648fee7cf5525b4e11db && \
     cmake -DRPI_INCLUDE_DIR=/opt/vc/include -DRPI_LIB_DIR=/opt/vc/lib .. && \
     make -j4 && \
-    sudo make install && \
-    sudo ldconfig && \
+    make install && \
+    ldconfig && \
     rm -rf /tmp/*
 
 # Default home assistant configuration
