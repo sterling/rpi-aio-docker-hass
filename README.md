@@ -1,5 +1,5 @@
 # rpi-aio-docker-hass
-All-in-one docker image for Home Assistant on a Raspberry Pi
+All-in-one docker image for Home Assistant on a Raspberry Pi. Tested on a Raspberry Pi 3 with Raspian 8 (jessie).
 
 Supports:
 - v0.48.1+
