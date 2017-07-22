@@ -11,7 +11,8 @@ Supports:
   - curl
   - mysql recorder (requires separate mysql server)
 
-### Usage
+### Example Usage
+Your usage may vary
 
 ```bash
 # home assistant
