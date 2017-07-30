@@ -36,11 +36,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# install home assistant, mysql client
-RUN pip3 install \
-      git+git://github.com/sterling/home-assistant#v0.48.1 \
-      mysqlclient
-
 # build libcec
 WORKDIR /tmp
 RUN git clone https://github.com/Pulse-Eight/platform.git && \
@@ -64,5 +59,8 @@ RUN git clone https://github.com/Pulse-Eight/platform.git && \
 # Default home assistant configuration
 VOLUME /config
 
- 
+# install home assistant, mysql client
+RUN pip3 install mysqlclient
+RUN pip3 install git+git://github.com/sterling/home-assistant#v0.49.1
+
 CMD [ "python3", "-m", "homeassistant", "--config", "/config" ]
