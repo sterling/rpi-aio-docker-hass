@@ -1,13 +1,12 @@
 # rpi-aio-docker-hass
-All-in-one docker image for Home Assistant on a Raspberry Pi. Tested on a Raspberry Pi 3 with Raspian 8 (jessie).
+All-in-one docker image for Home Assistant on a Raspberry Pi. Tested on a Raspberry Pi 3 with Raspian 8 (jessie). Uses a [fork of Home Assistant](https://github.com/sterling/home-assistant).
 
-Supports:
-- v0.48.1+
+Supports (and not limited to):
+- v0.58+
   - zwave
   - hdmi cec
   - nmap scanner
   - ssh device tracker
-  - wake on lan
   - curl
   - mysql recorder (requires [separate mysql server](#mysql))
 
@@ -18,7 +17,7 @@ Supports:
 docker run -d --name=home-assistant --net=host --rm \
   --device=/dev/vchiq:/dev/vchiq --device=/dev/zwave:/dev/zwave \
   -v ~/hass-config:/config -v /etc/localtime:/etc/localtime:ro -v ~/.ssh:/ssh \
-  sterlingw/rpi-aio-home-assistant:v0.48.1
+  sterlingw/rpi-aio-home-assistant:v0.58
 ```
 #### Parameters Explained
 - `--net=host` Optional, depending on your use case. You may expose specific ports or just use this for simplicity. This works well for things like Amazon Alexa/Emulated Hue.
