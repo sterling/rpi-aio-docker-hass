@@ -40,3 +40,9 @@ docker run -d --name=mysql -p 3306:3306 --rm \
   hypriot/rpi-mysql
 ```
 You may use another container to host the `recorder` component database (like MySQL, for example). With the above example, connections can be made at `mysql://hass:hass@127.0.0.1/homeassistant`. Don't use `localhost` because MySQL will try to connect via a unix socket instead of a TCP connection. 
+
+#### Nginx
+```bash
+# nginx
+docker run --name nginx -v ~/hass-config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v ~/hass-config/ssl/:/etc/nginx/ssl/ -d -p 8123:443 arm32v7/nginx
+```
