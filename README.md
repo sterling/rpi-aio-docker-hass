@@ -44,5 +44,5 @@ You may use another container to host the `recorder` component database (like My
 #### Nginx
 ```bash
 # nginx
-docker run --name nginx -v ~/hass-config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v ~/hass-config/ssl/:/etc/nginx/ssl/ -d -p 8123:443 arm32v7/nginx
+docker run --name nginx --rm -v ~/hass-config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro -v ~/hass-config/ssl/:/etc/nginx/ssl/ -d -p 8123:443 arm32v7/nginx
 ```
